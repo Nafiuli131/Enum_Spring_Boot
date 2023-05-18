@@ -1,5 +1,6 @@
 package com.example.Enum.Entity;
 
+import com.example.Enum.Enum.Designation;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,4 +18,5 @@ public class Employee {
 
     private String name;
 
+    private Designation designation;
 }
