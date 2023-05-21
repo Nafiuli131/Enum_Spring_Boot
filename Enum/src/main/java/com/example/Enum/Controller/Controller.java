@@ -1,9 +1,6 @@
 package com.example.Enum.Controller;
 
-import com.example.Enum.Dto.RequestEmployee;
-import com.example.Enum.Dto.ResponseEmployee;
-import com.example.Enum.Dto.StringRequestEmployee;
-import com.example.Enum.Dto.StringResponseEmployees;
+import com.example.Enum.Dto.*;
 import com.example.Enum.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -40,5 +37,21 @@ public class Controller {
     @GetMapping("/getEmployee/specificMessage")
     public ResponseEntity<String> getSpecificMessage(@RequestParam Long id){
         return service.getSpecificMessage(id);
+    }
+
+    //three parameter enum task
+    @PostMapping("/postThreeParamEmployee")
+    public ResponseEntity<String> postThreeParamEmployee(@RequestBody RequestThreeEmployees requestThreeEmployees) {
+        return service.postThreeParamEmployee(requestThreeEmployees);
+    }
+
+    @GetMapping("/getThreeEmployee")
+    public ResponseEntity<ResponseThreeEmployees> getThreeEmployeeInfo(@RequestParam Long id){
+        return service.getThreeEmployeeInfo(id);
+    }
+
+    @GetMapping("/getThreeEmployeeAllInfo")
+    public ResponseEntity<ResponseAllInfoOfThreeParamEmployee> getThreeEmployeeAllInfo(@RequestParam Long id){
+        return service.getThreeEmployeeAllInfo(id);
     }
 }
