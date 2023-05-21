@@ -10,13 +10,13 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "employee")
-public class Employee {
+@Table(name = "employee_string_enum")
+public class EmployeeStringEnum {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-
+    @Enumerated(EnumType.STRING)
     private Designation designation;
 }
